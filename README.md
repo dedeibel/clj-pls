@@ -25,7 +25,7 @@ Add [clj-pls "0.0.1"] as a dependency to your project.clj.
     
     (pls/parse "paylist.pls")
     {
-      :expected-entries 2
+      :entries 2
       :version 2
       :files [
         {
