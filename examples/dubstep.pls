@@ -1,0 +1,24 @@
+[playlist]
+NumberOfEntries=7
+File1=http://80.94.69.106:6374/
+Title1=Digitally Imported - Dubstep
+Length1=-1
+File2=http://pub1.di.fm:80/di_dubstep
+Title2=Digitally Imported - Dubstep
+Length2=-1
+File3=http://pub2.di.fm:80/di_dubstep
+Title3=Digitally Imported - Dubstep
+Length3=-1
+File4=http://pub5.di.fm:80/di_dubstep
+Title4=Digitally Imported - Dubstep
+Length4=-1
+File5=http://pub6.di.fm:80/di_dubstep
+Title5=Digitally Imported - Dubstep
+Length5=-1
+File6=http://pub4.di.fm:80/di_dubstep
+Title6=Digitally Imported - Dubstep
+Length6=-1
+File7=http://pub3.di.fm:80/di_dubstep
+Title7=Digitally Imported - Dubstep
+Length7=-1
+Version=2
