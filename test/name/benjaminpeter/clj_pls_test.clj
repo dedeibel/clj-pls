@@ -73,3 +73,24 @@ Length3=3
         (first (:files (parse playlist-with-three-entries)))))
   )
 
+
+; TODO Parsing file entries into a hash map
+; 1 => {
+;       title
+;       url
+;       length
+;       }
+; 
+;     (pprint (let [ini (new Ini (new StringReader playlist-with-three-entries))
+;           playlist (.get ini "playlist")]
+;       (for [entries playlist]
+;         (do
+;           (println (.getKey entries))
+;           ;                      get-index % get-key-name % get-value %
+;           (assoc-in (sorted-map) [1 "title"] "mytitle")
+;         )
+;       ;(println entries)
+;       ;  (doall (map println (map #(.getKey %) entries)))
+;       )
+;       ))
+
