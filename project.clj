@@ -5,6 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [
                  [org.clojure/clojure "1.4.0"]
-                 [org.ini4j/ini4j "0.5.2"]]
+                 [org.ini4j/ini4j "0.5.2"]
+                 ]
   :repositories [["mavenrepository" "http://repo1.maven.org/maven2/"]]
   )

@@ -1,6 +1,6 @@
 (ns name.benjaminpeter.clj-pls-test
   (:use clojure.test
-        name.benjaminpeter.clj-pls))
+        name.benjaminpeter.clj-pls)) 
 
 (deftest hash-with-number-of-entries-and-version-is-returned
   (is (= {
@@ -73,6 +73,23 @@ Length3=3
         (first (:files (parse playlist-with-three-entries)))))
   )
 
+(deftest entry-index-test
+  (is (= 1 (entry-index (new java.util.AbstractMap$SimpleImmutableEntry "File1" "http://exampl.com/1"))))
+  (is (= 2 (entry-index (new java.util.AbstractMap$SimpleImmutableEntry "File2" "http://exampl.com/1"))))
+  )
+
+(deftest -trailing-digit-test
+  (is (= "1"  (apply str (-trailing-digit "some1"))))
+  (is (= "2"  (apply str (-trailing-digit "some2"))))
+  (is (= "10" (apply str (-trailing-digit "some10"))))
+  (is (= ""   (apply str (-trailing-digit "some"))))
+  )
+
+(deftest trailing-digit-test
+  (is (= 1 (trailing-digit "some1")))
+  (is (= 10 (trailing-digit "some10")))
+  (is (= nil (trailing-digit "some")))
+)
 
 ; TODO Parsing file entries into a hash map
 ; 1 => {
@@ -81,16 +98,17 @@ Length3=3
 ;       length
 ;       }
 ; 
+;(import 'org.ini4j.Ini 'java.io.StringReader)
 ;     (pprint (let [ini (new Ini (new StringReader playlist-with-three-entries))
 ;           playlist (.get ini "playlist")]
-;       (for [entries playlist]
+;       (for [entry playlist]
 ;         (do
-;           (println (.getKey entries))
+;           (println (.getKey entry))
 ;           ;                      get-index % get-key-name % get-value %
-;           (assoc-in (sorted-map) [1 "title"] "mytitle")
+;           (assoc-in (sorted-map) [(entry-index entry) (entry-key entry)] (entry-value entry))
 ;         )
-;       ;(println entries)
-;       ;  (doall (map println (map #(.getKey %) entries)))
+       ;(println entries)
+       ;  (doall (map println (map #(.getKey %) entries)))
 ;       )
 ;       ))
 

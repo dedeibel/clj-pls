@@ -29,6 +29,22 @@
        :entries (if-let [num-entries (get playlist "NumberOfEntries")] (Integer/parseInt num-entries) 0)
        :version (get playlist "Version")
        :files   (parse-files playlist)
-       }
-      )
-    ))
+       })))
+
+
+(defn -trailing-digit [string]
+  (if (and (not-empty string) (Character/isDigit (last string)))
+    (conj (-trailing-digit (butlast string)) (last string))
+    []))
+
+(defn trailing-digit [string]
+  (let [trailing-digits (-trailing-digit string)]
+    (when (seq trailing-digits)
+      (Integer/parseInt (apply str trailing-digits)))))
+
+(defn entry-index [entry] 
+  (trailing-digit (.getKey entry)))
+
+(defn entry-key [entry] "title")
+
+(defn entry-value [entry] "t")
