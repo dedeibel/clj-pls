@@ -8,4 +8,7 @@
                  [org.ini4j/ini4j "0.5.2"]
                  ]
   :repositories [["mavenrepository" "http://repo1.maven.org/maven2/"]]
+  :test-selectors {:default (every-pred (complement :acceptance) (complement :integration))
+                   :integration :integration
+                   :all (constantly true)}
   )

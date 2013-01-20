@@ -1,14 +1,23 @@
 (ns name.benjaminpeter.clj-pls-test
   (:use clojure.test
-        name.benjaminpeter.clj-pls)) 
+        name.benjaminpeter.clj-pls)
+  (:import [java.io ByteArrayInputStream]))
 
 (deftest a-hash-with-number-of-entries-and-version-is-returned
-  (is (= {
-          :entries 0
-          :version nil
-          :files nil
-          }
-         (parse ""))))
+  (testing "Parsing an empty string."
+           (is (= {
+                   :entries 0
+                   :version nil
+                   :files nil
+                   }
+                  (parse ""))))
+  (testing "Parsing an empty input stream."
+           (is (= {
+                   :entries 0
+                   :version nil
+                   :files nil
+                   }
+                  (parse (new ByteArrayInputStream (.getBytes "" "UTF8")))))))
 
 (def empty-playlist "[playlist]
                      NumberOfEntries=0
@@ -105,7 +114,13 @@
                    :url "http://example.com/3"
                    :length 3
                    }
-                  (nth (:files (parse playlist-with-three-entries)) 2))))
-  )
+                  (nth (:files (parse playlist-with-three-entries)) 2)))))
 
+(def one-entry-pls-file-path "resources/one-entry-playlist.pls")
+
+(deftest ^:integration file-input-is-working
+  (testing "The file is present and can be read."
+           (is (not (empty? (slurp one-entry-pls-file-path)))))
+  (testing "Parsing the playlist from file is working too."
+           (= "My Favorite Song" (:title (first (:files (parse-file one-entry-pls-file-path)))))))
 

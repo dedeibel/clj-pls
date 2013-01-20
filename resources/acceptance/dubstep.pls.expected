@@ -1,0 +1,24 @@
+{:entries 7,
+ :version "2",
+ :files (
+  {:length -1,
+    :title "Digitally Imported - Dubstep",
+    :url "http://80.94.69.106:6374/"}
+ {:url "http://pub1.di.fm:80/di_dubstep",
+    :title "Digitally Imported - Dubstep",
+    :length -1}
+ {:title "Digitally Imported - Dubstep",
+    :length -1,
+    :url "http://pub2.di.fm:80/di_dubstep"}
+ {:title "Digitally Imported - Dubstep",
+    :url "http://pub5.di.fm:80/di_dubstep",
+    :length -1}
+ {:length -1,
+    :title "Digitally Imported - Dubstep",
+    :url "http://pub6.di.fm:80/di_dubstep"}
+ {:title "Digitally Imported - Dubstep",
+    :url "http://pub4.di.fm:80/di_dubstep",
+    :length -1}
+ {:url "http://pub3.di.fm:80/di_dubstep",
+    :title "Digitally Imported - Dubstep",
+    :length -1})}

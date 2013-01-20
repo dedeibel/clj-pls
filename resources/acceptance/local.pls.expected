@@ -1,0 +1,92 @@
+ {
+:entries 29,
+:version "2",
+:files (
+  {:length 100,
+  :title "Wake",
+  :url "Linkin Park - Minutes To Midnight/01 Wake.ogg"}
+  {:length 189,
+  :title "Given Up",
+  :url "Linkin Park - Minutes To Midnight/02 Given Up.ogg"}
+  {:title "Leave Out All The Rest",
+  :length 209,
+  :url "Linkin Park - Minutes To Midnight/03 Leave Out All The Rest.ogg"}
+  {:title "Bleed It Out",
+  :url "Linkin Park - Minutes To Midnight/04 Bleed It Out.ogg",
+  :length 164}
+  {:length 289,
+  :title "Shadow Of The Day",
+  :url "Linkin Park - Minutes To Midnight/05 Shadow Of The Day.ogg"}
+  {:url "Linkin Park - Minutes To Midnight/06 What I've Done.ogg",
+  :length 205,
+  :title "What I've Done"}
+  {:title "Hands Held High",
+  :url "Linkin Park - Minutes To Midnight/07 Hands Held High.ogg",
+  :length 233}
+  {:title "No More Sorrow",
+  :url "Linkin Park - Minutes To Midnight/08 No More Sorrow.ogg",
+  :length 221}
+  {:url "Linkin Park - Minutes To Midnight/09 Valentine's Day.ogg",
+  :title "Valentine's Day",
+  :length 196}
+  {:title "In Between",
+  :url "Linkin Park - Minutes To Midnight/10 In Between.ogg",
+  :length 196}
+  {:url "Linkin Park - Minutes To Midnight/11 In Pieces.ogg",
+  :length 218,
+  :title "In Pieces"}
+  {:title "The Little Things Give You Away",
+  :length 383,
+  :url "Linkin Park - Minutes To Midnight/12 The Little Things Give You Away.ogg"}
+  {:title "Rammlied",
+  :url "Rammstein - Liebe ist für alle da/01 Rammlied.mp3",
+  :length 319}
+  {:url "Rammstein - Liebe ist für alle da/02 Ich tu dir Weh.mp3",
+  :title "Ich tu dir Weh",
+  :length 302}
+  {:length 213,
+  :url "Rammstein - Liebe ist für alle da/03 Waidmanns Heil.mp3",
+  :title "Waidmanns Heil"}
+  {:url "Rammstein - Liebe ist für alle da/04 Haifisch.mp3",
+  :length 225,
+  :title "Haifisch"}
+  {:title "B********",
+  :length 254,
+  :url "Rammstein - Liebe ist für alle da/05 B________.mp3"}
+  {:title "Frühling in Paris",
+  :length 285,
+  :url "Rammstein - Liebe ist für alle da/06 Frühling in Paris.mp3"}
+  {:length 232,
+  :title "Wiener Blut",
+  :url "Rammstein - Liebe ist für alle da/07 Wiener Blut.mp3"}
+  {:title "Pussy",
+  :length 239,
+  :url "Rammstein - Liebe ist für alle da/08 Pussy.mp3"}
+  {:length 205,
+  :title "Liebe ist für alle da",
+  :url "Rammstein - Liebe ist für alle da/09 Liebe ist für alle da.mp3"}
+  {:url "Rammstein - Liebe ist für alle da/10 Mehr.mp3",
+  :length 248,
+  :title "Mehr"}
+  {:length 239,
+  :url "Rammstein - Liebe ist für alle da/11 Roter Sand.mp3",
+  :title "Roter Sand"}
+  {:title "Führe mich",
+  :url "Rammstein - Liebe ist für alle da/12 Führe mich.mp3",
+  :length 273}
+  {:title "Donaukinder",
+  :url "Rammstein - Liebe ist für alle da/13 Donaukinder.mp3",
+  :length 318}
+  {:url "Rammstein - Liebe ist für alle da/14 Halt.mp3",
+  :length 261,
+  :title "Halt"}
+  {:length 245,
+  :title "Roter Sand (Orchester Version)",
+  :url "Rammstein - Liebe ist für alle da/15 Roter Sand (Orchester Version).mp3"}
+  {:url "Rammstein - Liebe ist für alle da/16 Liese.mp3",
+  :length 236,
+  :title "Liese"}
+  {:url "Rammstein - Liebe ist für alle da/17 Rammlied (Thrash-Terpiece Remix).mp3",
+  :title "Rammlied (Thrash-Terpiece Remix)",
+  :length 380}
+)}
