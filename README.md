@@ -13,8 +13,12 @@ Add [clj-pls "0.1.0-SNAPSHOT"] as a dependency to your project.clj.
 
 ## Examples
 
+Input:
+
 ```
-(def playlist "[playlist]
+(require ['name.benjaminpeter.clj-pls :as 'pls])
+
+(def playlist-str "[playlist]
 File1=http://example.com:80
 Title1=Example track 1
 Length1=-1
@@ -24,32 +28,35 @@ Length2=195
 NumberOfEntries=2
 Version=2")
 
-(pls/parse paylist)
-{
-  :entries 2
-  :version "2"
-  :files [
-    {
-      :title "Example track 1"
-      :url "http://example.com:80"
-      :length -1
-    },
-    {
-      :title "Podcast 1"
-      :url "http://example.com/mysong.ogg"
-      :length 195
-    },
-  ]
-}
+(pls/parse playlist-str)
+; {:entries 2,
+;  :version "2",
+;  :files [
+;   {:url "http://example.com:80",        :title "Example track 1", :length -1}
+;   {:url "http://example.com/mysong.ogg",:title "Podcast 1",       :length 195}]}
 
-(pls/parse (new File "paylist.pls"))
-(pls/parse (new URL "http://example.com/awesome.pls"))
+(pls/parse (new java.io.ByteArrayInputStream (.getBytes playlist-str "UTF8")))
+(pls/parse (new java.io.File "paylist.pls"))
+(pls/parse (new java.net.URL "http://example.com/awesome.pls"))
 (pls/parse-file "paylist.pls")
+```
 
-TODO
+Output:
 
-(pls/write playlistmap)
-(pls/write playlistmap writer)
+```
+(require ['name.benjaminpeter.clj-pls :as 'pls])
+
+(def playlist
+  {:entries 2,
+   :version "2",
+   :files [
+    {:url "http://example.com:80",        :title "Example track 1", :length -1}
+    {:url "http://example.com/mysong.ogg",:title "Podcast 1",       :length 195}]})
+
+(pls/write! (new java.io.StringWriter) playlist)
+(pls/write! (new java.io.ByteArrayOutputStream) playlist)
+(pls/write! (new java.io.File "/tmp/clj-pls-t1.pls") playlist)
+(pls/write-file! "/tmp/clj-pls-t2.pls" playlist)
 ```
 
 ## Running tests
@@ -66,8 +73,8 @@ $ lein test :integration|:acceptance|:all
 
 ## TODOs
 
+* Maybe extract sub namespaces
 * Allow better error handling, currently IOException and InvalidFileFormatException is thrown
-* Allow writing of pls files
 * Add lazyness option and assume file entries are in subsequent order
 
 ## Further reading
