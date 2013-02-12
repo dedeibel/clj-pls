@@ -9,7 +9,7 @@ http://en.wikipedia.org/wiki/PLS_%28file_format%29
 
 Using leiningen
 
-Add [clj-pls "0.1.0-SNAPSHOT"] as a dependency to your project.clj.
+Add [clj-pls "0.2.0"] as a dependency to your project.clj.
 
 ## Examples
 
