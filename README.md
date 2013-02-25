@@ -71,6 +71,18 @@ Running other tests:
 $ lein test :integration|:acceptance|:all
 ```
 
+## Exceptions
+
+The following two exceptions can occur and are directly passed through from ini4j. For further
+information see the ini4j API documentation linked below.
+
+```
+(try
+  (pls/parse (new java.io.File "paylist.pls"))
+    (catch java.io.IOException ioe (handle-me))
+    (catch org.ini4j.InvalidFileFormatException iffe (handle-me)))
+```
+
 ## TODOs
 
 * Maybe extract sub namespaces
