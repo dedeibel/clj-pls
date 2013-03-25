@@ -43,11 +43,11 @@
 (def write-test-expected-output 
 "[playlist]
 NumberOfEntries = 2
-Title1 = First One
 File1 = http://example.com/1
+Title1 = First One
 Length1 = -1
-Title2 = Second
 File2 = http://example.com/2.ogg
+Title2 = Second
 Length2 = 123
 Version = 2
 

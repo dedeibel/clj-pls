@@ -76,8 +76,8 @@
 
 (defn- put-entry! [^Profile$Section playlist-section index file]
   (doto playlist-section
-    (.add (create-entry-key entry-title-key   index)  (:title   file))
     (.add (create-entry-key entry-file-key    index)  (:url     file))
+    (.add (create-entry-key entry-title-key   index)  (:title   file))
     (.add (create-entry-key entry-length-key  index)  (str (:length  file)))))
 
 (defn- create-config []
