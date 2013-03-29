@@ -5,7 +5,7 @@ basically ini files.
 
 http://en.wikipedia.org/wiki/PLS_%28file_format%29
 
-[![Build Status](https://travis-ci.org/[dedeibel]/[clj-pls].png)](https://travis-ci.org/[dedeibel]/[clj-pls])
+[![Build Status](https://travis-ci.org/dedeibel/clj-pls.png)](https://travis-ci.org/dedeibel/clj-pls)
 
 ## Usage
 
