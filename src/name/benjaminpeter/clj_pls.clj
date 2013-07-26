@@ -15,6 +15,9 @@
 ; Allows the definition of arbitrary case sections, sometimes the [playlist] section
 ; is written with upper case letters. Set this to true if you get any problems.
 (def ^:dynamic *lower_case_sections* false)
+; Set strict operator to true if you don't want spaces around the equals sign
+; of key value pairs
+(def ^:dynamic *set_strict_operator* true)
 
 ; The following are not dynamic because there should not be a need to change them.
 ; If case insensitivity should be implemented the lowerCaseKeys option of ini4j is
@@ -80,12 +83,22 @@
     (.add (create-entry-key entry-title-key   index)  (:title   file))
     (.add (create-entry-key entry-length-key  index)  (str (:length  file)))))
 
-(defn- create-config []
-  (doto (new Config) (.setLowerCaseSection *lower_case_sections*)))
+(defn- create-basic-config []
+  (new Config))
 
+(defn- create-read-config []
+  (doto (create-basic-config)
+    (.setLowerCaseSection *lower_case_sections*)))
 
+(defn- create-write-config []
+  (doto (create-basic-config)
+    (.setStrictOperator *set_strict_operator*)))
 
+(defn- create-read-ini-obj []
+  (doto (new Ini) (.setConfig (create-read-config))))
 
+(defn- create-write-ini-obj []
+  (doto (new Ini) (.setConfig (create-write-config))))
 
 (defmulti parse 
   "Parses a .pls playlist as stream, reader, file, url or string and returns a map of the content. See readme or tests for an example."
@@ -101,7 +114,7 @@
 
 (defmethod parse ::input
   [playlist-stream]
-  (let [ini       (doto (new Ini) (.setConfig (create-config)) (.load playlist-stream))
+  (let [ini       (doto (create-read-ini-obj) (.load  playlist-stream))
         playlist  (.get ini playlist-section-name)]
     {
      :entries (if-let [num-entries (get playlist number-of-entries-key)] (Integer/parseInt num-entries) 0)
@@ -126,17 +139,15 @@
 
 (defmethod write! ::output
   [output-stream playlist & {:keys [version] :or {version "2"}}]
-  (let [^Ini ini                          (new Ini)
+  (let [^Ini ini                          (create-write-ini-obj)
         ^Profile$Section playlist-section (.add ini playlist-section-name)]
     (do 
       (.add playlist-section number-of-entries-key (str (count (:files playlist))))
       (doseq [[file index] (map list (:files playlist) (iterate inc 1))]
-        (put-entry! playlist-section index file)
-        )
+        (put-entry! playlist-section index file))
       (.add playlist-section version-key version)
       (.store ini output-stream)
-      output-stream
-      )))
+      output-stream)))
 
 (defn write-file!
   "Writes a .pls playlist to the given filepath. See readme or tests for an example."

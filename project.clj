@@ -1,4 +1,4 @@
-(defproject clj-pls "0.2.2"
+(defproject clj-pls "0.2.3"
   :description "Small clojure wrapper using ini4j to parse and write .pls playlist files."
   :url "https://github.com/dedeibel/clj-pls"
   :license {:name "Eclipse Public License"

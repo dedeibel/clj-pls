@@ -42,14 +42,14 @@
 
 (def write-test-expected-output 
 "[playlist]
-NumberOfEntries = 2
-File1 = http://example.com/1
-Title1 = First One
-Length1 = -1
-File2 = http://example.com/2.ogg
-Title2 = Second
-Length2 = 123
-Version = 2
+NumberOfEntries=2
+File1=http://example.com/1
+Title1=First One
+Length1=-1
+File2=http://example.com/2.ogg
+Title2=Second
+Length2=123
+Version=2
 
 ")
 ; Seems like ini4j adds two newlines at the end

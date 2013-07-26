@@ -11,7 +11,7 @@ http://en.wikipedia.org/wiki/PLS_%28file_format%29
 
 Using leiningen
 
-Add [clj-pls "0.2.2"] as a dependency to your project.clj.
+Add [clj-pls "0.2.3"] as a dependency to your project.clj.
 
 ## Examples
 
